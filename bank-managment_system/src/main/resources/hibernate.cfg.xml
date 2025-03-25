@@ -1,0 +1,19 @@
+
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/bank_db</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">Himanshu@123</property>
+
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.show_sql">true</property>
+        
+        <mapping class="com.bankmanagement.bank_management_system.model.User"/>
+        <mapping class="com.bankmanagement.bank_management_system.model.Account"/>
+        <mapping class="com.bankmanagement.bank_management_system.model.BankTransaction"/>
+    </session-factory>
+</hibernate-configuration>
+
