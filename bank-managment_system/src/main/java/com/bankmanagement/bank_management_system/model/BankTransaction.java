@@ -16,12 +16,16 @@ import jakarta.persistence.TemporalType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@Setter
+@ToString
 @Entity
 @Table(name = "transactions")
 public class BankTransaction {
@@ -45,92 +49,13 @@ public class BankTransaction {
     @Column(nullable = false)
     private Date transactionDate;
 
-    @Column(nullable = false)
+   @Column(nullable = false)
     private String transactionType;
 
     @Column(nullable = false)
     private String status;
 
-    public BankTransaction() {
-    }
+    
 
-    public BankTransaction(Account senderAccount, Account receiverAccount, double amount, Date transactionDate, String transactionType, String status) {
-        this.senderAccount = senderAccount;
-        this.receiverAccount = receiverAccount;
-        this.amount = amount;
-        this.transactionDate = transactionDate;
-        this.transactionType = transactionType;
-        this.status = status;
-    }
-
-    // Getters and Setters
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Account getSenderAccount() {
-        return senderAccount;
-    }
-
-    public void setSenderAccount(Account senderAccount) {
-        this.senderAccount = senderAccount;
-    }
-
-    public Account getReceiverAccount() {
-        return receiverAccount;
-    }
-
-    public void setReceiverAccount(Account receiverAccount) {
-        this.receiverAccount = receiverAccount;
-    }
-
-    public double getAmount() {
-        return amount;
-    }
-
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
-
-    public Date getTransactionDate() {
-        return transactionDate;
-    }
-
-    public void setTransactionDate(Date transactionDate) {
-        this.transactionDate = transactionDate;
-    }
-
-    public String getTransactionType() {
-        return transactionType;
-    }
-
-    public void setTransactionType(String transactionType) {
-        this.transactionType = transactionType;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    @Override
-    public String toString() {
-        return "Transaction{" +
-                "id=" + id +
-                ", senderAccount=" + senderAccount.getId() +
-                ", receiverAccount=" + receiverAccount.getId() +
-                ", amount=" + amount +
-                ", transactionDate=" + transactionDate +
-                ", transactionType='" + transactionType + '\'' +
-                ", status='" + status + '\'' +
-                '}';
-    }
+    
 }
